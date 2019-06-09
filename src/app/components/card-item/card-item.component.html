@@ -1,0 +1,10 @@
+<div class="card" [ngClass]=" {'puntero':item.type === 'artist'}" (click)="handleCardClick()">
+  <img [src]="item.images | noimage" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{ item.name }}</h5>
+    <p class="card-text" *ngIf="item.artists">
+      <span class="badge badge-pill badge-success puntero" *ngFor="let artist of item.artists" (click)="goArtistView(artist.id)">{{ artist.name }}</span>
+    </p>
+    <p class="card-text" *ngIf="item.release_date"><small class="text-muted">Release date {{ item.release_date | date}}</small></p>
+  </div>
+</div>

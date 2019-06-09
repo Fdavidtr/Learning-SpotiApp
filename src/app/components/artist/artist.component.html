@@ -1,0 +1,24 @@
+<app-loading *ngIf="!artist"></app-loading>
+<div class="container" *ngIf="artist" class="fadeIn animated">
+  <div class="row">
+    <div class="col-2">
+      <img [src]="artist.images|noimage" class="image-thumbnail img-circle" alt="">
+      <span class="badge badge-pill badge-dark position-absolute" title="Popularity">{{ artist.popularity }}</span>
+    </div>
+    <div class="offset-1 col-4">
+      <h1> {{ artist.name }}</h1>
+      <p class="card-text" *ngIf="artist.genres">
+        <span class="badge badge-pill badge-light" *ngFor="let item of artist.genres">{{ item }}</span>
+      </p>
+      <p>
+        <a class="link" [href]="artist.uri">Abrir en Spotify</a>
+      </p>
+      <p>
+        <a href="link" [href]="artist.external_urls.spotify" target="_blank">Ver perfil en Spotify</a>
+      </p>
+    </div>
+  </div>
+</div>
+<pre style="color:white;">
+  {{ artist | json }}
+</pre>
