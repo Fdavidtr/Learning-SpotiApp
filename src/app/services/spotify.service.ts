@@ -8,9 +8,9 @@ import { map } from 'rxjs/operators'
 })
 export class SpotifyService {
 
-  token: string = "BQCfkSqeEAr6YzCkJWt35lRW7j4v9s2u7GOrSQi52zEh7ssUXg9i8O2OABs8b0ER3lRZOARr5XJbPGKR9tU"
-  headers: HttpHeaders
-  private debounce: number
+  token: string = "BQDgTC_Ngs_9GnZ9lAg6D5nXwme2kdWT0eR18Y4rx3lVWMGmBiYeyZNAmh2mBDSo6o8WeimEqBGL2dAtl5Y";
+  headers: HttpHeaders;
+  private debounce: number;
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({
       'Authorization': 'Bearer ' + this.token

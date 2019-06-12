@@ -18,7 +18,33 @@
       </p>
     </div>
   </div>
+  <div class="row">
+    <div class="col">
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th>Foto</th>
+            <th>Album</th>
+            <th>Canción</th>
+            <th>Vista previa</th>
+            <th>Spotify</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let track of topTracks">
+            <td><img [src]="track.album.images|noimage:'smallest'" alt="track.album.name"></td>
+            <td>{{ track.album.name }}</td>
+            <td>{{ track.name }}</td>
+            <td>
+              <audio *ngIf="track.preview_url"  [src]="track.preview_url" controls></audio>
+            </td>
+            <td>
+              <a target="_blank" [href]="track.external_urls.spotify">Ver en Spotify</a>
+            </td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
-<pre style="color:white;">
-  {{ artist | json }}
-</pre>
